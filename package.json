@@ -39,6 +39,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
+    "node-env-file": "^0.1.8",
     "nunjucks": "^3.1.6",
     "rimraf": "^2.6.2"
   },
