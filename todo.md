@@ -2,10 +2,9 @@
 
 ## Pending
 
-- sessions
+- easy authentication
 - compression
 - cors
-- mongo
 
 ## Done
 

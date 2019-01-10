@@ -1,5 +1,12 @@
-{% extends 'layout.html' %}
+{% extends "layouts/page.html" %}
 
-{% block content %}
-Hello {{ message }}
+
+{% block page %}
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+      You are logged in.
+    </p>
+  </div>
+</div>
 {% endblock %}
