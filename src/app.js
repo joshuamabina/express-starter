@@ -1,19 +1,19 @@
 import express from 'express';
 import path from 'path';
 import logger from 'morgan';
+import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
 import routes from './routes';
 
 const app = express();
 app.disable('x-powered-by');
 
-// View engine setup
-app.set('views', path.join(__dirname, '../views'));
-app.set('view engine', 'pug');
+app.use(logger('dev', { skip: () => app.get('env') === 'test' }));
 
-app.use(logger('dev', {
-  skip: () => app.get('env') === 'test'
-}));
+// View engine setup
+nunjucks.configure('views', { autoescape: true, express: app, watch: true });
+app.set('view engine', 'html');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
@@ -30,11 +30,7 @@ app.use((req, res, next) => {
 
 // Error handler
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
-  res
-    .status(err.status || 500)
-    .render('error', {
-      message: err.message
-    });
+  res.status(err.status || 500).render('error', { message: err.message });
 });
 
 export default app;
