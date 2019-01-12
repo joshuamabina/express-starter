@@ -5,6 +5,7 @@
 - easy authentication
 - compression
 - cors
+- jsDoc
 
 ## Done
 

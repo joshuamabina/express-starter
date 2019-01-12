@@ -71,7 +71,9 @@ app.use((req, res, next) => {
  * Multipurpose error handler.
  */
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
-  res.status(err.status || 500).render('error', { message: err.message });
+  if (!err.status) err = { status: 500, message: 'Whoops! Something went wrong.' }
+
+  res.status(err.status).render('error', { ...err });
 });
 
 
