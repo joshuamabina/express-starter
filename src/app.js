@@ -23,7 +23,16 @@ app.disable('x-powered-by');
 import env from 'node-env-file';
 if (app.get('env') === 'development') {
   env(path.join(__dirname, './../.env'));
+} else if (app.get('env') === 'test') {
+  env(path.join(__dirname, './../.env.test'));
 }
+
+
+/**
+ * Database configuration
+ */
+import mongoose from 'mongoose';
+mongoose.connect('mongodb://localhost/demo', { useCreateIndex: true, useNewUrlParser: true });
 
 
 /**
@@ -48,6 +57,21 @@ import bodyParser from 'body-parser';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../public')));
+
+
+/**
+ * Session
+ */
+import session from 'express-session';
+app.use(session({ secret: 'foobarbaz', resave: true, saveUninitialized: true }));
+
+
+/**
+ * Passport
+ */
+import passport from 'passport';
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 /**

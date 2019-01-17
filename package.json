@@ -36,12 +36,19 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.3",
+    "mongoose-unique-validator": "^2.0.2",
     "morgan": "^1.9.0",
     "node-env-file": "^0.1.8",
     "nunjucks": "^3.1.6",
-    "rimraf": "^2.6.2"
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "rimraf": "^2.6.2",
+    "validator": "^10.11.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",

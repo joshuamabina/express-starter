@@ -11,14 +11,14 @@
     <title>Express Starter</title>
 
     <!-- Scripts -->
-    <script src="http://localhost:8000/js/app.js" defer></script>
+    <script src="js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
     <!-- Styles -->
-    <link href="http://localhost:8000/css/app.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
   </head>
   <body>
     <div id="app">
@@ -30,7 +30,7 @@
                 <div class="card-header">Express Starter - Login</div>
 
                 <div class="card-body">
-                  <form method="POST" action="http://localhost:8000/login">
+                  <form method="POST" action="/login">
                     <input type="hidden" name="_token" value="QFgTt1OX9LmFY6j4rzLWnnmFGZo99E7lcQmP3NPb">
                     <div class="form-group row">
                       <label for="email" class="col-sm-4 col-form-label text-md-right">Email</label>
@@ -67,7 +67,7 @@
                           Login
                         </button>
 
-                        <a class="btn btn-link" href="http://localhost:8000/password/reset">
+                        <a class="btn btn-link" href="/password/reset">
                           Forgot Your Password?
                         </a>
                       </div>
@@ -80,9 +80,6 @@
         </div>
       </main>
     </div>
-
-    <script src="http://localhost:8000/js/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlRu1jzM99goM41XNRmv2Q0DvJhaXjFno&callback=initMap"async defer></script>
   </body>
 </html>
 

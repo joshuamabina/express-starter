@@ -8,8 +8,8 @@ describe('GET /login', () => {
 });
 
 describe('GET /', () => {
-  it('should render home page', async () => {
-    await request(app).get('/').expect(200);
+  it('should redirect to /login if not authenticated', async () => {
+    await request(app).get('/').expect(302);
   });
 });
 
