@@ -1,9 +1,8 @@
 #Tasks
 
-
+- [ ] test suite for api
+- [ ] test suite for web
 - [ ] create user
-- [ ] jsDoc
-- [ ] compression
 - [ ]
 
 - [x] easy authentication
