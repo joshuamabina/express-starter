@@ -27,8 +27,10 @@ const localStrategy = new LocalStrategy(
 
 passport.use(localStrategy);
 
-export const auth = passport.authenticate('local', {
+const auth = passport.authenticate('local', {
   session: true,
   successRedirect: '/',
   failureRedirect: '/login',
 });
+
+export default auth;

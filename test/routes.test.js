@@ -1,5 +1,6 @@
 import request from 'supertest';
-import app from '../src/app.js';
+
+import app from '../src/app';
 
 describe('GET /login', () => {
   it('should render login page', async () => {
@@ -11,9 +12,7 @@ describe('GET /', () => {
   it('should redirect to /login if not authenticated', async () => {
     await request(app).get('/').expect(302);
   });
-});
 
-describe('GET /', () => {
   it('should render home page if authenticated', async () => {
     await request(app).get('/users').expect(200);
   });
