@@ -1,4 +1,15 @@
 import app from './app';
 
 const { PORT = 8080 } = process.env;
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`)); // eslint-disable-line no-console
+
+app.listen(PORT, () => {
+  console.log({ // eslint-disable-line no-console
+    NODE_ENV: process.env.NODE_ENV,
+    DB_DATABASE: process.env.DB_DATABASE,
+
+    APP_KEY: process.env.APP_KEY,
+    APP_NAME: process.env.APP_NAME,
+
+    JWT_SECRET: process.env.DB_DATABASE,
+  });
+});
