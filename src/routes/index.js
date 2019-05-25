@@ -3,9 +3,9 @@ import { Router } from 'express';
 import api from './api';
 import web from './web';
 
-const routes = Router();
+const router = Router();
 
-routes.use(api);
-routes.use(web);
+router.use(web);
+router.use(api);
 
-export default routes;
+export default router;

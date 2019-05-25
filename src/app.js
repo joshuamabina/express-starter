@@ -15,10 +15,9 @@ import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from 'passport';
-import respond from 'express-respond';
 
-import routes from './routes';
-
+import api from './routes/api';
+import web from './routes/web';
 
 /**
  * Create a new application instance.
@@ -40,7 +39,7 @@ if (app.get('env') === 'development') {
 /**
  * Database configuration
  */
-mongoose.connect('mongodb://localhost/demo', { useCreateIndex: true, useNewUrlParser: true });
+mongoose.connect(process.env.DB_DATABASE, { useCreateIndex: true, useNewUrlParser: true });
 
 
 /**
@@ -67,7 +66,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 /**
  * Session
  */
-app.use(session({ secret: 'foobarbaz', resave: true, saveUninitialized: true }));
+app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
 
 
 /**
@@ -80,18 +79,17 @@ app.use(passport.session());
 /**
  * Routes
  */
-app.use('/', routes);
+app.use('/api/v1/', api);
+app.use('/', web);
 
-
-/**
- * Response
- */
-app.use(respond);
 
 /**
  * Catch 404 and forward to error handler.
  */
 app.use((req, res, next) => {
+  // todo check if accepts html and render error html page
+  // else return json error message
+
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
@@ -102,6 +100,9 @@ app.use((req, res, next) => {
  * Multipurpose error handler.
  */
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  // todo check if accepts html and render error html page
+  // else return json error message
+
   if (!err.status) err = { status: 500, message: 'Whoops! Something went wrong.' }
 
   res.status(err.status).render('error', { ...err });

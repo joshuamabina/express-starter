@@ -1,20 +1,28 @@
 import { Router } from 'express';
 
 import auth from '../auth';
+import * as homeController from '../controllers/home';
+import * as loginController from '../controllers/login';
 
-const web = Router();
+const router = Router();
 
 
 /**
- * GET /welcome
+ * GET /
  */
-web.get('/', (req, res, next) => res.render('welcome'));
+router.get('/', auth, homeController.show);
 
 
 /**
  * GET /login
  */
-web.get('/login', (req, res, next) => res.render('login'));
+router.get('/login', loginController.showLoginForm);
 
 
-export default web;
+/**
+ * POST /login
+ */
+router.post('/login', loginController.login);
+
+
+export default router;
