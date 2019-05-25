@@ -16,8 +16,8 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from 'passport';
 
-import api from './routes/api';
-import web from './routes/web';
+import apiRoutes from './routes/api';
+import webRoutes from './routes/web';
 
 /**
  * Create a new application instance.
@@ -79,8 +79,8 @@ app.use(passport.session());
 /**
  * Routes
  */
-app.use('/api/v1/', api);
-app.use('/', web);
+app.use('/api/v1/', apiRoutes);
+app.use('/', webRoutes);
 
 
 /**

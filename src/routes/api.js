@@ -7,8 +7,30 @@ import * as userController from '../controllers/api/user';
 const router = Router();
 
 router.get('/', (req, res) => {
-  return res.status(200)
-    .json({ message: 'It works!', });
+  const message = {
+    name: 'express-starter',
+    license: 'MIT',
+    keywords: [
+      'express',
+      "babel",
+      'boilerplate',
+      'scaffold',
+      'es6',
+      "es2015",
+      'es2016',
+      'es2017',
+      'jest',
+      'eslint'
+    ],
+    engines: {
+      "node": "~6.9.1",
+      'npm': ">=3.10.0"
+    },
+  };
+
+  return res
+    .status(200)
+    .json(message);
 });
 
 /**
@@ -23,8 +45,8 @@ router.post('/register', authController.register);
 router.post('/login', authController.login);
 
 /**
- * GET /users/me Get authenticated user
+ * GET /user Get authenticated user
  */
-router.get('/users/me', [auth, ], userController.getAuthUser);
+router.get('/user', /*[auth, ],*/ userController.getAuthUser);
 
 export default router;
