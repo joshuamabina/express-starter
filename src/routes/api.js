@@ -14,13 +14,13 @@ router.get('/', (req, res) => {
 /**
  * POST /register Register a user
  */
-router.post('/register', [], authController.register);
+router.post('/register', authController.register);
 
 
 /**
  * POST /login Log in
  */
-router.post('/login', [], authController.login);
+router.post('/login', authController.login);
 
 /**
  * GET /users/me Get authenticated user

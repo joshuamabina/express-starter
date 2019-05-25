@@ -11,12 +11,18 @@ It's a small improvement over [Babel's official approach](https://github.com/bab
 
 Make sure you read the FAQ for more details and info.
 
+### Tasks
+
+> TODO
+
 ### Features:
+
 - [Express.js](https://expressjs.com/) as the web framework.
 - ES2017+ support with [Babel](https://babeljs.io/).
 - Automatic polyfill requires based on environment with [babel-preset-env](https://github.com/babel/babel-preset-env).
 - Linting with [ESLint](http://eslint.org/).
 - Testing with [Jest](https://facebook.github.io/jest/).
+- Template with [Nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
 - [Quick deployment guide](DEPLOYMENT.md) for Heroku, AWS Elastic Beanstalk, and App Engine.
 
 ## Getting started
