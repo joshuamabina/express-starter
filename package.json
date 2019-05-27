@@ -9,11 +9,11 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "test": "jest --watchAll",
+    "test": "jest --detectOpenHandles",
     "start": "node dist/index.js",
     "lint": "./node_modules/eslint/bin/eslint.js src test --fix",
     "build": "npm run lint && mkdir -p dist && babel src -s -D -d dist",
-    "dev": "nodemon src/index.js --exec \"node -r dotenv/config -r babel-register\""
+    "dev": "nodemon src/index.js --exec \"npm run test && npm run lint\""
   },
   "keywords": [
     "express",
@@ -99,6 +99,7 @@
     }
   },
   "jest": {
+    "testMatch": ["**/__tests__/*.js?(x)"],
     "testEnvironment": "node",
     "verbose": true
   }
