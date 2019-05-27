@@ -11,10 +11,6 @@ It's a small improvement over [Babel's official approach](https://github.com/bab
 
 Make sure you read the FAQ for more details and info.
 
-### Tasks
-
-> TODO
-
 ### Features:
 
 - [Express.js](https://expressjs.com/) as the web framework.
