@@ -31,8 +31,8 @@ app.disable('x-powered-by');
  */
 if (app.get('env') === 'development') {
   env(path.join(__dirname, './../.env'));
-} else if (app.get('env') === 'test') {
-  env(path.join(__dirname, './../.env.test'));
+} else if (app.get('env') === 'testing') {
+  // TODO ENV(path.join(__dirname, './../.env.testing'));
 }
 
 
