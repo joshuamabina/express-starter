@@ -11,23 +11,25 @@ describe('GET /', () => {
 });
 
 describe('GET /login', () => {
-  it('Renders the login page', async () => {
-    await request(app)
+  it('Renders the login page', done => {
+    request(app)
       .get('/login')
-      .expect(200);
+      .expect(200)
+      .end(done);
   });
 });
 
 describe('GET /api/v1/user', () => {
-  it('Gets the authenticated user', async () => {
+  it('Gets the authenticated user', done => {
     const authenticatedUser = {
       id: '1234',
       email: 'user@example.com',
       password: 'password',
     };
 
-    await request(app)
+    request(app)
       .get('/api/v1/user')
-      .expect(200, authenticatedUser);
+      .expect(200, authenticatedUser)
+      .end(done);
   });
 });

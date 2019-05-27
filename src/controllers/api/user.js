@@ -31,6 +31,8 @@ export async function getUsers(request, response) {
         password: 'password',
       });
   } catch(error) {
+    const { message } = error;
+
     return response
       .status(500)
       .json({
@@ -52,6 +54,8 @@ export async function findUser(request, response) {
       .status(200)
       .json(user);
   } catch(error) {
+    const { message } = error;
+
     return response
       .status(500)
       .json({

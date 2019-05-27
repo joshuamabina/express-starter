@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import auth from '../auth';
+import auth from '../auth'; // eslint-disable-line no-unused-vars
 import * as authController  from '../controllers/api/auth';
 import * as userController from '../controllers/api/user';
 

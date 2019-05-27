@@ -9,7 +9,7 @@
 import path from 'path';
 import express from 'express';
 import env from 'node-env-file';
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'; // eslint-disable-line no-unused-vars
 import logger from 'morgan';
 import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
@@ -31,15 +31,16 @@ app.disable('x-powered-by');
  */
 if (app.get('env') === 'development') {
   env(path.join(__dirname, './../.env'));
-} else if (app.get('env') === 'test') {
-  env(path.join(__dirname, './../.env.test'));
+} else if (app.get('env') === 'testing') {
+  env(path.join(__dirname, './../.env.testing'));
 }
 
 
 /**
  * Database configuration
  */
-mongoose.connect(process.env.DB_DATABASE, { useCreateIndex: true, useNewUrlParser: true });
+// TODO mongoose.connect(process.env.DB_DATABASE, { useCreateIndex: true, useNewUrlParser: true });
+
 
 
 /**
