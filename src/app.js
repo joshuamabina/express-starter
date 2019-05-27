@@ -39,7 +39,7 @@ if (app.get('env') === 'development') {
 /**
  * Database configuration
  */
-mongoose.connect(process.env.DB_DATABASE, { useCreateIndex: true, useNewUrlParser: true });
+// TODO mongoose.connect(process.env.DB_DATABASE, { useCreateIndex: true, useNewUrlParser: true });
 
 
 /**
