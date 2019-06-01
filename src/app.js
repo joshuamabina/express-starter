@@ -9,7 +9,6 @@
 import path from 'path';
 import express from 'express';
 import env from 'node-env-file';
-import mongoose from 'mongoose'; // eslint-disable-line no-unused-vars
 import logger from 'morgan';
 import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
@@ -18,6 +17,7 @@ import passport from 'passport';
 
 import apiRoutes from './routes/api';
 import webRoutes from './routes/web';
+
 
 /**
  * Create a new application instance.
@@ -34,13 +34,6 @@ if (app.get('env') === 'development') {
 } else if (app.get('env') === 'testing') {
   env(path.join(__dirname, './../.env.testing'));
 }
-
-
-/**
- * Database configuration
- */
-// TODO mongoose.connect(process.env.DB_DATABASE, { useCreateIndex: true, useNewUrlParser: true });
-
 
 
 /**
