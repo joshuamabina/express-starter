@@ -22,4 +22,6 @@ Supported features:
 - Template with [Nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
 - Continous integration with [Travis CI](https://travis-ci.com/).
 
+If this was helpful to you, why not share this article on Twitter? I will appreciate. If you're feeling extra charitable, feel free to follow Joshua Mabina on Twitter and GitHub.
+
 MIT License. See the [LICENSE](LICENSE) file.
