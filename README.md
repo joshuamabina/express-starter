@@ -1,10 +1,10 @@
+express-starter
+
 [![Build Status](https://travis-ci.com/joshuamabina/create-express-app.svg?branch=master)](https://travis-ci.com/joshuamabina/create-express-app)
 [![Dependencies Status](https://david-dm.org/joshuamabina/create-express-app/status.svg)](https://david-dm.org/joshuamabina/create-express-app)
 [![Dev Dependencies Status](https://david-dm.org/vmasto/express-babel/dev-status.svg)](https://david-dm.org/joshuamabina/create-express-app)
 
-create-express-app 
-
-> Heads up! This An opinonated approach to building express applications using Babel, ES2017+ features.
+An opinonated approach to building express applications using Babel, ES2017+ features.
 
 Frankly speaking, I am only a dwarf standing on the shoulders of giants. Namely, these giants are:
 
