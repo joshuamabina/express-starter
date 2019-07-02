@@ -4,7 +4,7 @@ express-starter
 [![Dependencies Status](https://david-dm.org/joshuamabina/create-express-app/status.svg)](https://david-dm.org/joshuamabina/create-express-app)
 [![Dev Dependencies Status](https://david-dm.org/vmasto/express-babel/dev-status.svg)](https://david-dm.org/joshuamabina/create-express-app)
 
-An opinonated approach to building express applications using Babel, ES2017+ features.
+An opinonated approach to building robust web applications using ES2017+ features.
 
 Frankly speaking, I am only a dwarf standing on the shoulders of giants. Namely, these giants are:
 
@@ -12,7 +12,7 @@ Frankly speaking, I am only a dwarf standing on the shoulders of giants. Namely,
 - [example-node-server by babel](https://github.com/babel/example-node-server)
 - [express-generator by expressjs](https://expressjs.com/en/starter/generator.html)
 
-Supported features:
+Supported features
 
 - [Express.js](https://expressjs.com/) as the web framework.
 - ES2017+ support with [Babel](https://babeljs.io/).
@@ -22,6 +22,12 @@ Supported features:
 - Template with [Nunjucks](https://mozilla.github.io/nunjucks/getting-started.html)
 - Continous integration with [Travis CI](https://travis-ci.com/).
 
-If this was helpful to you, why not share this article on Twitter? I will appreciate. If you're feeling extra charitable, feel free to follow Joshua Mabina on Twitter and GitHub.
+How can I support you?
+
+ - Why not [Tweet to @joshuamabina](https://twitter.com/intent/tweet?text=Build+w%2F+%40joshuamabina+robust+web+apps+using+%23expressjs+and+%23es2017+features.+https%3A%2F%2Fgithub.com%2Fjoshuamabina%2Fexpress-starter&ref_src=twsrc%5Etfw)? I will appreciate.
+ - If you're feeling a little extra charitable, why not follow me on [Twitter][_tw] and [GitHub][_gh]? I will appreciate.
 
 MIT License. See the [LICENSE](LICENSE) file.
+
+[_gh]: https://github.com/joshuamabina
+[_tw]: https://twitter.com/joshuamabina
