@@ -19,8 +19,8 @@ const localStrategy = new LocalStrategy(
       }
 
       return done(null, user);
-    } catch (e) {
-      return done(e, false);
+    } catch (error) {
+      return done(error, false);
     }
   },
 );
