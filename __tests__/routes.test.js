@@ -2,34 +2,41 @@ import request from 'supertest';
 
 import app from '../src/app';
 
-describe('GET /', () => {
-  it('Redirects to login page if not authenticated', async () => {
-    await request(app)
-    .get('/')
-    .expect(302);
-  });
+afterAll(async () => {
+    await new Promise(resolve => setTimeout(() => resolve(), 500));
 });
 
 describe('GET /login', () => {
-  it('Renders the login page', done => {
-    request(app)
-      .get('/login')
-      .expect(200)
-      .end(done);
+  it('renders the login page', async () => {
+    const response = await request(app).get('/login');
+
+    expect(response.statusCode).toBe(200);
+    expect(response.type).toBe('text/html');
+  });
+});
+
+describe('GET /', () => {
+  it('redirects to login page if not authenticated', async () => {
+    const response = await request(app).get('/');
+
+    expect(response.redirect).toBe(true);
+    expect(response.statusCode).toBe(302);
+
+    expect(response.type).toBe('text/plain');
   });
 });
 
 describe('GET /api/v1/user', () => {
-  it('Gets the authenticated user', done => {
+  it('gets the authenticated user', async () => {
     const authenticatedUser = {
       id: '1234',
       email: 'user@example.com',
       password: 'password',
     };
 
-    request(app)
-      .get('/api/v1/user')
-      .expect(200, authenticatedUser)
-      .end(done);
+    const response = await request(app).get('/api/v1/user');
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toMatchObject(authenticatedUser);
   });
 });
