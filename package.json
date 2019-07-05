@@ -28,10 +28,6 @@
     "eslint"
   ],
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
@@ -48,8 +44,13 @@
     "validator": "^10.11.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^24.8.0",
+    "babel-preset-airbnb": "^4.0.1",
     "babel-register": "^6.26.0",
     "dotenv": "^4.0.0",
     "eslint": "^4.19.1",
@@ -60,22 +61,6 @@
     "jest": "^24.8.0",
     "nodemon": "^1.12.1",
     "supertest": "^3.0.0"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ],
-    "plugins": [
-      "transform-object-rest-spread",
-      "transform-class-properties"
-    ]
   },
   "eslintConfig": {
     "parser": "babel-eslint",
