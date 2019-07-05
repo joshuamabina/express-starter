@@ -16,7 +16,6 @@ import session from 'express-session';
 import passport from 'passport';
 import mongoose from 'mongoose';
 
-
 import apiRoutes from './routes/api';
 import webRoutes from './routes/web';
 
@@ -30,36 +29,36 @@ app.disable('x-powered-by');
 
 /**
  * Application environment
+ *
+ * FIXME with dotenv https://github.com/motdotla/dotenv#faq
  */
-if (app.get('env') === 'development') {
+if (app.get('env') === 'test') {
+  env(path.join(__dirname, './../.env.test'));
+} else {
   env(path.join(__dirname, './../.env'));
-} else if (app.get('env') === 'testing') {
-  env(path.join(__dirname, './../.env.testing'));
 }
-
-
-/**
- * Database
- */
-const uri = process.env.DB_DATABASE;
-
-const options = {
-  useNewUrlParser: true,
-}
-
-mongoose.connect(uri, options);
-
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'Error connecting to the database.')); // eslint-disable-line no-console
-db.on('connected', console.info.bind(console, 'Success connecting to the database.')); // eslint-disable-line no-console
-db.on('disconnected', console.error.bind(console, 'Failed connecting to the database.')); // eslint-disable-line no-console
 
 
 /**
  * Logger
  */
-app.use(logger('dev', { skip: () => app.get('env') !== 'development' }));
+app.use(logger('dev', { skip: () => app.get('env') !== 'local' }));
+
+
+/**
+ * Database
+ */
+
+mongoose.connect(process.env.DB_DATABASE, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'Error connecting to the database.')); // eslint-disable-line no-console
+db.on('disconnected', console.error.bind(console, 'Failed connecting to the database.')); // eslint-disable-line no-console
 
 
 /**
@@ -113,13 +112,13 @@ app.use((req, res, next) => {
 /**
  * Multipurpose error handler.
  */
-app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+app.use((error, req, res, next) => { // eslint-disable-line no-unused-vars
   // todo check if accepts html and render error html page
   // else return json error message
 
-  if (!err.status) err = { status: 500, message: 'Whoops! Something went wrong.' }
+  if (!error.status) error = { status: 500, message: 'Whoops! Something went wrong.' }
 
-  res.status(err.status).render('error', { ...err });
+  res.status(error.status).render('error', { ...error });
 });
 
 
