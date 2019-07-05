@@ -2,34 +2,39 @@ import request from 'supertest';
 
 import app from '../src/app';
 
+afterAll(async () => {
+  await new Promise(resolve => setTimeout(() => resolve(), 500));
+});
+
 describe('GET /', () => {
-  it('Redirects to login page if not authenticated', async () => {
-    await request(app)
-    .get('/')
-    .expect(302);
+  it('renders the welcome page', async () => {
+    const response = await request(app).get('/');
+
+    expect(response.statusCode).toBe(200);
+    expect(response.type).toBe('text/html');
   });
 });
 
-describe('GET /login', () => {
-  it('Renders the login page', done => {
-    request(app)
-      .get('/login')
-      .expect(200)
-      .end(done);
+
+describe('GET /register', () => {
+  it('renders the registration page', async () => {
+    const response = await request(app).get('/register');
+
+    expect(response.type).toBe('text/html');
+    expect(response.statusCode).toBe(200);
   });
 });
 
-describe('GET /api/v1/user', () => {
-  it('Gets the authenticated user', done => {
-    const authenticatedUser = {
-      id: '1234',
-      email: 'user@example.com',
-      password: 'password',
+describe('POST /register', () => {
+  it('registers a user if validation passes', async () => {
+    const newUserData = {
+        name: 'User',
+        email: 'user@example.com',
+        password: 'topsecretpassword',
     };
 
-    request(app)
-      .get('/api/v1/user')
-      .expect(200, authenticatedUser)
-      .end(done);
+    const response = await request(app).post('/register').send(newUserData);
+
+    expect(response.header.location).toBe('/home');
   });
 });

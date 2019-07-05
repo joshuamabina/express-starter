@@ -1,28 +1,15 @@
 import { Router } from 'express';
 
-import auth from '../auth';
+import * as registerController from '../controllers/register';
 import * as homeController from '../controllers/home';
-import * as loginController from '../controllers/login';
 
 const router = Router();
 
+router.get('/', homeController.welcome);
 
-/**
- * GET /
- */
-router.get('/', auth, homeController.show);
+router.get('/home', homeController.show);
 
-
-/**
- * GET /login
- */
-router.get('/login', loginController.showLoginForm);
-
-
-/**
- * POST /login
- */
-router.post('/login', loginController.login);
-
+router.get('/register', registerController.showRegistrationForm);
+router.post('/register', registerController.registerUser);
 
 export default router;
