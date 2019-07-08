@@ -9,11 +9,9 @@ export async function showRegistrationForm(request, response) {
 
 export async function registerUser(request, response, next) {
   try {
-    const user = await User.create(request.body);
+    await User.create(request.body);
     return response.redirect('/home');
   } catch (error) {
-    if (!error.status) error = { status: 500, message: error.message, ...error };
-
-    next(error);
+    next({ status: 500, message: error.message, ...error });
   }
 }

@@ -14,7 +14,6 @@ import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import passport from 'passport';
-import mongoose from 'mongoose';
 
 import apiRoutes from './routes/api';
 import webRoutes from './routes/web';

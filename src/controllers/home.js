@@ -1,4 +1,4 @@
-export async function welcome (request, response) {
+export async function welcome (request, response, next) {
   try {
     return response
       .status(200)
@@ -20,7 +20,7 @@ export async function show (request, response) {
     return response
       .status(200)
       .type('html')
-      .render('home');
+      .render('home', user);
   } catch(error) {
     return response
       .status(500)
