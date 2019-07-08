@@ -1,6 +1,11 @@
 import request from 'supertest';
 
 import app from '../src/app';
+import db from '../src/db';
+
+beforeEach(async () => {
+  await db.dropDatabase();
+});
 
 afterAll(async () => {
   await new Promise(resolve => setTimeout(() => resolve(), 500));

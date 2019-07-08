@@ -46,22 +46,6 @@ app.use(logger('dev', { skip: () => app.get('env') !== 'local' }));
 
 
 /**
- * Database
- */
-
-mongoose.connect(process.env.DB_DATABASE, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
-
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'Error connecting to the database.')); // eslint-disable-line no-console
-db.on('disconnected', console.error.bind(console, 'Failed connecting to the database.')); // eslint-disable-line no-console
-
-
-/**
  * View templating engine
  */
 nunjucks.configure('views', { autoescape: true, express: app, watch: true });
