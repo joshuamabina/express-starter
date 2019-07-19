@@ -33,7 +33,7 @@ app.disable('x-powered-by');
  */
 if (app.get('env') === 'test') {
   env(path.join(__dirname, './../.env.test'));
-} else {
+} else if (app.get('env') === 'local') {
   env(path.join(__dirname, './../.env'));
 }
 

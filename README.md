@@ -4,6 +4,8 @@ express-starter
 [![Dependencies Status](https://david-dm.org/joshuamabina/create-express-app/status.svg)](https://david-dm.org/joshuamabina/create-express-app)
 [![Dev Dependencies Status](https://david-dm.org/vmasto/express-babel/dev-status.svg)](https://david-dm.org/joshuamabina/create-express-app)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 An opinionated lightning-fast approach to building robust web applications using ES2017+ features.
 
 Frankly speaking, I am only a dwarf standing on the shoulders of giants. Namely, these giants are:

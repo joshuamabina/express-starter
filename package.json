@@ -1,6 +1,8 @@
 {
+  "name": "express-starter",
   "version": "1.0.0",
-  "description": "Using latest JavaScript features on the server",
+  "description": "A barebones app using the latest JavaScript features on the server.",
+  "repository": "https://github.com/joshuamabina/express-starter",
   "author": "Joshua Mabina <mabinajoshua@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
