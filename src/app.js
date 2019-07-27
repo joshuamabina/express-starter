@@ -42,7 +42,7 @@ app.use(logger('dev', { skip: () => app.get('env') !== 'local' }));
 /**
  * View templating engine
  */
-nunjucks.configure('views', { autoescape: true, express: app, watch: true });
+nunjucks.configure('resources/views', { autoescape: true, express: app, watch: true });
 app.set('view engine', 'html');
 
 
