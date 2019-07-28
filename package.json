@@ -38,13 +38,11 @@
     "mongoose": "^5.4.3",
     "mongoose-unique-validator": "^2.0.2",
     "morgan": "^1.9.0",
-    "node-env-file": "^0.1.8",
     "nunjucks": "^3.1.6",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg-promise": "^8.7.2",
     "rimraf": "^2.6.2",
-    "rm": "^0.1.8",
     "validator": "^10.11.0"
   },
   "devDependencies": {
