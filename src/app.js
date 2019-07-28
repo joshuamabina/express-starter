@@ -8,7 +8,7 @@
 
 import path from 'path';
 import express from 'express';
-import env from 'node-env-file';
+import dotenv from 'dotenv';
 import logger from 'morgan';
 import nunjucks from 'nunjucks';
 import bodyParser from 'body-parser';
@@ -18,24 +18,19 @@ import passport from 'passport';
 import apiRoutes from './routes/api';
 import webRoutes from './routes/web';
 
+/**
+ * Application environment
+ *
+ * See https://www.npmjs.com/package/dotenv
+ */
+dotenv.config();
+
 
 /**
  * Create a new application instance.
  */
 const app = express();
 app.disable('x-powered-by');
-
-
-/**
- * Application environment
- *
- * FIXME with dotenv https://github.com/motdotla/dotenv#faq
- */
-if (app.get('env') === 'test') {
-  env(path.join(__dirname, './../.env.test'));
-} else if (app.get('env') === 'local') {
-  env(path.join(__dirname, './../.env'));
-}
 
 
 /**
