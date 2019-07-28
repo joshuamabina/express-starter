@@ -44,6 +44,7 @@
     "passport-local": "^1.0.0",
     "pg-promise": "^8.7.2",
     "rimraf": "^2.6.2",
+    "rm": "^0.1.8",
     "validator": "^10.11.0"
   },
   "devDependencies": {
