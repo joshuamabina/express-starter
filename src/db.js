@@ -6,11 +6,15 @@
  */
 import mongoose from 'mongoose';
 
-mongoose.connect(process.env.DB_DATABASE, {
+const uri = process.env.DB_DATABASE || 'mongodb://localhost/forge';
+
+const options = {
   useCreateIndex: true,
   useNewUrlParser: true,
   useFindAndModify: false,
-});
+};
+
+mongoose.connect(uri, options);
 
 const db = mongoose.connection;
 

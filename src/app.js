@@ -5,7 +5,6 @@
  * @since 0.1.0
  * @public
  */
-
 import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
@@ -36,7 +35,7 @@ app.disable('x-powered-by');
 /**
  * Logger
  */
-app.use(logger('dev', { skip: () => app.get('env') !== 'local' }));
+app.use(logger('dev', { skip: () => app.get('env') !== 'development' }));
 
 
 /**

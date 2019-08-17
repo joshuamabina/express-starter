@@ -1,6 +1,8 @@
 const path = require('path');
+const webpackNodeExternals = require('webpack-node-externals');
 
 module.exports = {
+  target: 'node',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -18,9 +20,8 @@ module.exports = {
             plugins: ['@babel/plugin-transform-runtime']
           }
         }
-      }
+      },
     ]
   },
-  target: 'node',
-  node: { fs: 'empty' }
+  externals: webpackNodeExternals(),
 }
