@@ -26,8 +26,9 @@ Supported features
 
 How can I support you?
 
- - Why not [Tweet to @joshuamabina](https://twitter.com/intent/tweet?text=Build+w%2F+%40joshuamabina+robust+web+apps+using+%23expressjs+and+%23es2017+features.+https%3A%2F%2Fgithub.com%2Fjoshuamabina%2Fexpress-starter&ref_src=twsrc%5Etfw)? I will appreciate.
- - If you're feeling a little charitable, why not follow me on [Twitter][_tw] and [GitHub][_gh]? I will appreciate.
+- Why not *star this repo*? It will surely motivate and push me to innovate for more community solutions.
+- Why not [Tweet to @joshuamabina](https://twitter.com/intent/tweet?text=Build+w%2F+%40joshuamabina+robust+web+apps+using+%23expressjs+and+%23es2017+features.+https%3A%2F%2Fgithub.com%2Fjoshuamabina%2Fexpress-starter&ref_src=twsrc%5Etfw)? I will appreciate.
+- If you're feeling a little charitable, why not follow me on [Twitter][_tw] and [GitHub][_gh]? I will appreciate.
 
 MIT License. See the [LICENSE](LICENSE) file.
 
