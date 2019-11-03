@@ -9,6 +9,7 @@
     "node": "8.6.0"
   },
   "scripts": {
+    "api-docs": "gulp apidoc",
     "clean": "rimraf dist",
     "test": "npm run build:dev && jest --detectOpenHandles --forceExit",
     "watch": "webpack --mode=development --watch",
@@ -63,6 +64,8 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jest": "^21.3.2",
     "eslint-watch": "^3.1.3",
+    "gulp": "^4.0.2",
+    "gulp-apidoc": "^0.2.8",
     "jest": "^24.8.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.12.1",
