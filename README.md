@@ -1,9 +1,10 @@
-# express-starter
+express-starter
 
 [![Build Status][ico-travis]][link-travis]
 [![dependencies Status][ico-deps]][link-deps]
 [![devDependencies Status][ico-devdeps]][link-devdeps]
-[![Fork][ico-fork]][link-repo]
+
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 An opinionated lightning-fast approach to building robust web applications using ES2017+ features.
@@ -40,5 +41,4 @@ MIT License. See the [LICENSE](LICENSE) file.
 [link-travis]: https://travis-ci.com/joshuamabina/express-starter/
 [link-devdeps]: https://david-dm.org/joshuamabina/create-express-app?type=dev
 [link-deps]: https://david-dm.org/joshuamabina/create-express-app
-[ico-fork]: https://img.shields.io/github/forks/joshuamabina/express-starter?style=social
 [link-repo]: https://github.com/joshuamabina/express-starter
