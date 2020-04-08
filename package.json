@@ -51,7 +51,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-eslint": "^8.2.6",
-    "babel-jest": "^24.8.0",
+    "babel-jest": "^25.2.6",
     "babel-loader": "^8.0.6",
     "babel-preset-airbnb": "^4.0.1",
     "babel-register": "^6.26.0",
