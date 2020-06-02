@@ -1,15 +1,23 @@
-version: '3'
+version: "3"
+
 services:
-  app:
-    container_name: express-starter
-    restart: always
-    build: .
-    ports:
-      - '80:3000'
-    links:
-      - mongo
   mongo:
-    container_name: mongo
+    restart: always
     image: mongo
     ports:
-      - '27017:27017'
+      - "27017:27017"
+    volumes:
+      - db-data:/var/lib/mongo
+
+  app:
+    restart: always
+    build: ./
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      - DATABASE_DB=mongodb://localhost/express-starter-db
+
+volumes:
+  db-data:

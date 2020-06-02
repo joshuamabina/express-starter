@@ -10,11 +10,10 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "test": "npm run build:dev && jest --detectOpenHandles --forceExit",
-    "watch": "webpack --mode=development --watch",
+    "test": "jest --detectOpenHandles --forceExit",
     "start": "node dist/bundle.js",
-    "build:dev": "npm run clean && webpack --mode=development",
-    "build:prod": "npm run clean && webpack --mode=production"
+    "watch": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
   },
   "keywords": [
     "express",
