@@ -47,7 +47,7 @@
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
-    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.5.5",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^25.2.6",
