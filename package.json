@@ -39,7 +39,7 @@
     "nunjucks": "^3.2.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "pg-promise": "^8.7.2",
+    "pg-promise": "^10.9.2",
     "rimraf": "^3.0.2",
     "validator": "^10.11.0"
   },
