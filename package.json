@@ -41,7 +41,7 @@
     "passport-local": "^1.0.0",
     "pg-promise": "^10.9.2",
     "rimraf": "^3.0.2",
-    "validator": "^10.11.0"
+    "validator": "^13.5.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.13",
