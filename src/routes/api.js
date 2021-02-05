@@ -1,52 +1,38 @@
 import { Router } from 'express';
-
-import auth from '../auth'; // eslint-disable-line no-unused-vars
-import * as authController  from '../controllers/api/auth';
-import * as userController from '../controllers/api/user';
+import Africastalking from 'africastalking';
+import customId from 'custom-id'
 
 const router = Router();
-
-router.get('/', (req, res) => {
-  const message = {
-    name: 'express-starter',
-    license: 'MIT',
-    keywords: [
-      'express',
-      "babel",
-      'boilerplate',
-      'scaffold',
-      'es6',
-      "es2015",
-      'es2016',
-      'es2017',
-      'jest',
-      'eslint'
-    ],
-    engines: {
-      "node": "~6.9.1",
-      'npm': ">=3.10.0"
-    },
-  };
-
-  return res
-    .status(200)
-    .json(message);
+const AT = Africastalking({
+  apiKey: 'cbe49b692bacebcd1e96085eac4098f9e8fea7e0438b5d650de88fd8b1b32b6b',
+  username: 'sandbox',
 });
 
-/**
- * POST /register Register a user
- */
-router.post('/register', authController.register);
+router.post("/register", (req, res) => {
+  // TODO extract name and age
+  // from req.body.text line by line
 
+  const lines = req.body.text.trim().split('\n');
+  const responses = lines.map(line => customId({ name: line }));
 
-/**
- * POST /login Log in
- */
-router.post('/login', authController.login);
+  const sms = AT.SMS;
 
-/**
- * GET /user Get authenticated user
- */
-router.get('/user', /*[auth, ],*/ userController.getAuthUser);
+  const opts = {
+    to: '+255783787166',
+    from: '18369',
+    message: responses.toString(),
+  };
+
+  //Configure options for message sending
+  sms.send(opts)
+    .then(function(success) {
+      console.log(success);
+      res.send({ opts, sms, success });
+    })
+    .catch(function(error) {
+      console.log(error);
+      res.send({ opts, sms, error });
+    });
+});
 
 export default router;

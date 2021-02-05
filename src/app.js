@@ -15,7 +15,7 @@ import session from 'express-session';
 import passport from 'passport';
 
 import apiRoutes from './routes/api';
-import webRoutes from './routes/web';
+// import webRoutes from './routes/web';
 
 /**
  * Application environment
@@ -70,7 +70,7 @@ app.use(passport.session());
  * Routes
  */
 app.use('/api/v1/', apiRoutes);
-app.use('/', webRoutes);
+// app.use('/', webRoutes);
 
 
 /**
