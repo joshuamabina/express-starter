@@ -52,7 +52,7 @@
     "babel-eslint": "^8.2.6",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.0.6",
-    "babel-preset-airbnb": "^4.0.1",
+    "babel-preset-airbnb": "^5.0.0",
     "babel-register": "^6.26.0",
     "bootstrap": "^4.6.0",
     "css-loader": "^5.0.1",
