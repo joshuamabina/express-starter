@@ -44,7 +44,7 @@
     "validator": "^13.5.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
+    "@babel/cli": "^7.12.16",
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.0",
     "@babel/plugin-transform-runtime": "^7.12.10",
