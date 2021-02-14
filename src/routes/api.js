@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import auth from '../auth'; // eslint-disable-line no-unused-vars
+import auth from '../middlewares/auth'; // eslint-disable-line no-unused-vars
 import * as authController  from '../controllers/api/auth';
 import * as userController from '../controllers/api/user';
 
@@ -47,6 +47,6 @@ router.post('/login', authController.login);
 /**
  * GET /user Get authenticated user
  */
-router.get('/user', /*[auth, ],*/ userController.getAuthUser);
+router.get('/user', [auth, ], userController.getAuthUser);
 
 export default router;
