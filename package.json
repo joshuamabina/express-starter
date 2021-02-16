@@ -36,7 +36,7 @@
     "mongoose": "^5.7.5",
     "mongoose-unique-validator": "^2.0.2",
     "morgan": "^1.9.0",
-    "nunjucks": "^3.2.2",
+    "nunjucks": "^3.2.3",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg-promise": "^10.9.2",
