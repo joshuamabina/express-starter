@@ -6,7 +6,7 @@
  */
 import mongoose from 'mongoose';
 
-const uri = process.env.DATABASE_DB || 'mongodb://localhost/expressdb';
+const uri = process.env.DB_DATABASE;
 
 const options = {
   useCreateIndex: true,

@@ -22,6 +22,16 @@ const localStrategy = new LocalStrategy({ options }, async (email, password, don
   }
 });
 
+// passport.serializeUser(function(user, done) {
+//   done(null, user.id);
+// });
+
+// passport.deserializeUser(function(id, done) {
+//   User.findById(id, function(err, user) {
+//     done(err, user);
+//   });
+// });
+
 passport.use(localStrategy);
 
 const auth = passport.authenticate("local", {

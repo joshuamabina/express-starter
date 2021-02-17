@@ -1,8 +1,7 @@
 import mongoose, { Schema } from "mongoose";
-// import irina from "irina";
 import validator from "validator";
-import { genSaltSync, hashSync, compareSync } from "bcrypt";
-// import uniqueValidator from "mongoose-unique-validator";
+import uniqueValidator from "mongoose-unique-validator";
+import { hashSync, compareSync } from "bcrypt";
 
 // import { passwordReg } from './user.validations';
 // import constants from '../../config/constants';
@@ -43,16 +42,12 @@ UserSchema.pre("save", function (next) {
   return next();
 });
 
-UserSchema.methods._genSalt = function (rounds = 10) {
-  return genSaltSync(rounds);
-};
-
-UserSchema.methods._hashPassword = function (password) {
-  return hashSync(password, this._genSalt());
+UserSchema.methods._hashPassword = function (password, saltRounds = 10) {
+  return hashSync(password, saltRounds);
 };
 
 UserSchema.methods.verifyPassword = function (password) {
-  return compareSync(this._hashPassword(password), this.password);
+  return compareSync(password, this.password);
 };
 
 UserSchema.methods.toAuthJSON = function () {
@@ -70,10 +65,6 @@ UserSchema.methods.toJSON = function () {
   };
 };
 
-// UserSchema.plugin(irina);
-
-// UserSchema.plugin(uniqueValidator, {
-//   message: "{VALUE} already taken!"
-// });
+UserSchema.plugin(uniqueValidator, { message: "{VALUE} already taken!" });
 
 export default mongoose.model("User", UserSchema);
