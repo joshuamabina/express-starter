@@ -33,7 +33,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-session": "^1.17.1",
-    "mongoose": "^5.11.17",
+    "mongoose": "^5.12.2",
     "mongoose-unique-validator": "^2.0.2",
     "morgan": "^1.9.0",
     "nunjucks": "^3.2.3",
