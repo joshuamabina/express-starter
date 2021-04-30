@@ -1,0 +1,120 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "02:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: webpack
+    versions:
+    - 5.21.2
+    - 5.23.0
+    - 5.24.0
+    - 5.24.1
+    - 5.24.3
+    - 5.24.4
+    - 5.25.1
+    - 5.26.0
+    - 5.26.2
+    - 5.26.3
+    - 5.27.1
+    - 5.27.2
+    - 5.28.0
+    - 5.30.0
+    - 5.31.0
+    - 5.32.0
+    - 5.33.2
+    - 5.34.0
+    - 5.35.0
+    - 5.35.1
+    - 5.36.0
+  - dependency-name: mongoose
+    versions:
+    - 5.11.15
+    - 5.11.16
+    - 5.11.18
+    - 5.11.19
+    - 5.12.0
+    - 5.12.1
+    - 5.12.2
+    - 5.12.5
+  - dependency-name: eslint-plugin-jest
+    versions:
+    - 24.1.3
+    - 24.1.4
+    - 24.3.5
+  - dependency-name: "@babel/cli"
+    versions:
+    - 7.12.10
+    - 7.12.16
+    - 7.12.17
+    - 7.13.14
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.1
+    - 7.13.10
+    - 7.13.13
+    - 7.13.14
+    - 7.13.15
+    - 7.13.8
+  - dependency-name: eslint-watch
+    versions:
+    - 7.0.0
+    - 7.0.0
+  - dependency-name: eslint
+    versions:
+    - 7.20.0
+    - 7.24.0
+  - dependency-name: css-loader
+    versions:
+    - 5.1.0
+    - 5.1.1
+    - 5.1.2
+    - 5.1.3
+    - 5.2.0
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.10
+    - 7.13.12
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: pg-promise
+    versions:
+    - 10.9.4
+    - 10.9.5
+  - dependency-name: "@babel/plugin-transform-runtime"
+    versions:
+    - 7.12.15
+    - 7.12.17
+    - 7.13.10
+    - 7.13.2
+    - 7.13.6
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: "@babel/runtime"
+    versions:
+    - 7.12.18
+    - 7.13.2
+    - 7.13.6
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: "@babel/plugin-proposal-object-rest-spread"
+    versions:
+    - 7.13.0
+  - dependency-name: eslint-plugin-import
+    versions:
+    - 2.22.1
+  - dependency-name: node-sass
+    versions:
+    - 5.0.0
+  - dependency-name: webpack-cli
+    versions:
+    - 4.4.0
